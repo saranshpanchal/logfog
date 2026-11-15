@@ -1,0 +1,7 @@
+{"level":"error","time":"2026-11-15T12:00:00Z","msg":"timeout talking to db","service":"api","status":503,"req_id":"r1","trace_id":"abc"}
+{"level":"info","time":"2026-11-15T12:00:01Z","msg":"health ok","service":"healthcheck","status":200}
+{"level":"error","time":"2026-11-15T12:00:02Z","msg":"disk full","service":"api","status":500}
+{"level":"warn","time":"2026-11-15T12:00:03Z","msg":"timeout retry","service":"worker","status":200}
+level=info service=healthcheck status=204 msg="ping"
+level=error service=api status=404 msg="missing widget" request_id=r9
+plain text line with no special token

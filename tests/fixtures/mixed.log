@@ -1,0 +1,32 @@
+{"level":30,"time":1731679445123,"msg":"listening","service":"api","port":7474}
+{"level":50,"time":1731679446000,"msg":"request failed","service":"api","status":503,"err":"timeout talking to db","req_id":"req-1","trace_id":"abc"}
+{"level":"info","ts":"2026-11-15T12:00:00Z","message":"health ok","service":"healthcheck","status":200}
+level=info service=worker status=200 msg="job done" duration=12ms
+level=error service=worker status=500 msg="timeout on upstream" request_id=req-9
+INFO plain text started component=api
+ERROR something broke in the handler
+Traceback (most recent call last):
+  File "app.py", line 10, in <module>
+    main()
+  File "app.py", line 7, in main
+    raise RuntimeError("boom")
+RuntimeError: boom
+thread 'worker' panicked at src/main.rs:42:5:
+explicit panic
+stack backtrace:
+   0: rust_begin_unwind
+             at /rustc/library/std/src/panicking.rs:1:1
+   1: core::panicking::panic_fmt
+             at /rustc/library/core/src/panicking.rs:1:1
+Error: connection reset
+    at Socket.emit (node:net:123:1)
+    at TCP.<anonymous> (node:net:456:7)
+api_1 | {"level":40,"time":1731679450000,"msg":"slow query","service":"api","status":200,"duration":1500}
+127.0.0.1 - - [15/Nov/2026:12:00:01 +0000] "GET /health HTTP/1.1" 200 12 "-" "curl/8.0"
+10.0.0.8 - - [15/Nov/2026:12:00:02 +0000] "POST /v1/charge HTTP/1.1" 502 40 "-" "svc"
+{"__REALTIME_TIMESTAMP":"1731679452000000","MESSAGE":"unit started","PRIORITY":"6","SYSLOG_IDENTIFIER":"app","_SYSTEMD_UNIT":"app.service"}
+[31mERROR[0m colored failure code=E42
+panic: nil pointer
+goroutine 1 [running]:
+main.main()
+	/app/main.go:10 +0x20
