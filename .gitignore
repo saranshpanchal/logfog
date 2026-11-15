@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+logfog.sqlite
+logfog.sqlite-*
+*.db
+.DS_Store
